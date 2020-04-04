@@ -8,11 +8,11 @@ session_start();
  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>For All Login</title>
  
     <style>
 
-        .button {
+.button {
             font-family: times;
             display: inline-block;
             padding: 15px 25px;
@@ -78,6 +78,16 @@ session_start();
         label {
             font-size: 100%;
         }
+
+        #pop{
+            display:none;
+            position:absolute;top:50%;left:50%;
+            margin-left:-150px;
+            margin-top:-100px;padding:10px;
+            width:300px;
+            height:200px;
+            border:1px solid #d0d0d0;
+        }
  
     </style>
  
@@ -91,19 +101,23 @@ session_start();
 
     <h1>For All</h1>
 
-    <!-- esse bloco tb tem q ficar bonitinho kkkkk-->
-<?php
-if (isset($_SESSION['nao_autenticado'])):
-?>
-<div class="notification is-danger">
-<p>Nome de usuário ou senha inválidos.</p>
-</div>
-<?php
-endif;
-unset($_SESSION['nao_autenticado']);
-?>
+    <?php
+        if (isset($_SESSION['nao_autenticado'])):
+    ?>
 
-<form action = login.php method=POST>
+        <div id="pop">
+        <a href="#" onclick="document.getElementById('pop').style.display='none';">Tentar novamente</a><br/>
+        
+        <p>Dados incorretos</p>
+    
+        </div>
+
+    <?php
+        endif;
+        unset($_SESSION['nao_autenticado']);
+    ?>
+
+    <form action = login.php method=POST>
     
         <br>
         
@@ -115,25 +129,23 @@ unset($_SESSION['nao_autenticado']);
 
         <br><br><br>
 
-        <a class= "button" href = "tela_cadastro.php">Cadastre-se</a><br>
-        
+        <a class= "button" href = "http://localhost/For_All/tela_cadastro.php">Cadastre-se</a><br>
+
         <br><br><br><br><br><br>
     
     </div>
     
-    <div class = "Informacoes">
+    <div id = "Informacoes" class = "Informacoes">
     
-    <p>O For All é um website <strong>gratuito</strong>, que tem como objetivo proporcionar a <strong>inclusão</strong> de crianças com deficiência visual e auditiva, por intermédio da leitura.</p><br>
-    <p> Para isso contamos com a sua <strong>colaboração</strong>. Como? É simples:
-    <ul>
-        <li>Grave áudios de livros infantis e didáticos;</li>
-        <li>Grave vídeos de livros infantis e didáticos (em líbras);</li>
-    </ul>
-    </p>
+    <p>O For All é um website <strong>gratuito</strong>, que tem como objetivo proporcionar a 
+    <strong>inclusão</strong> de crianças com deficiência visual e auditiva, por intermédio da leitura.</p>
     
-    <div class="imgcanto" align="right">
+    <p> Para isso contamos com a sua <strong>colaboração</strong>. Como? É simples: Grave áudios e vídeos 
+    (em Líbras) de livros infantis e didáticos e nos envie!</p>
+    
+    <div id = "livro" align="right">
 
-        <img src = "./Imagens_Usadas/livro_login.png" style = "width:30%" alt = "Livro">
+        <img src = "./Imagens/livro_login.png" style = "width:30%" alt = "Livro">
         
     </div>
 

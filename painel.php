@@ -7,7 +7,7 @@ include('verificarlogin.php');
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>For All</title>
+    <title>For All Menu</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -92,8 +92,8 @@ include('verificarlogin.php');
 
         <div class="colunaDesenho">
 
-        <img src = "./Imagens_Usadas/cachorro_menu.png"
-        alt = "Cachorro" height = "374.5" width = "420" left = "100px">
+        <img src = "./Imagens/cachorro_menu.png"
+        alt = "Cachorro" height = "374.5" width = "420">
 
         </div>
 
@@ -108,8 +108,6 @@ include('verificarlogin.php');
         </div>
 
         </div>
-
-    <script src="script.js"></script>
 
   </body>
   
